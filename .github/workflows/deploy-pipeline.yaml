@@ -49,12 +49,10 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Create Release
-        uses: ncipollo/release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          tag: ${{ github.run_number }}
-          name: Release from ${{ github.run_number }}
-          body: New release for ${{ github.sha }}
+          repo_token: ${{ secrets.github_token }}
+          automatic_release_tag: ${{ github.run_number }}
+          title: Release from ${{ github.run_number }}
           draft: false
           prerelease: false
