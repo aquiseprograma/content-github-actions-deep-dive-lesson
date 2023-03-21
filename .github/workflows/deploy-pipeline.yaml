@@ -52,7 +52,7 @@ jobs:
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.github_token }}
-          automatic_release_tag: ${{ github.run_number }}
+          automatic_release_tag: tag_${{ github.run_number }}
           title: Release from ${{ github.run_number }}
           draft: false
           prerelease: false
